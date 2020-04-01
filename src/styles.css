@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url(https://res.cloudinary.com/dum4u7sro/image/upload/v1585677557/In_summer_he_song_sings_itself._mmabud.png);
+  background-position: bottom;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.enter, .quiz, .results{
+  height: 90vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Neucha', cursive;
+  margin: 0 auto;
+}
+.enter{
+  color: #E83151;
+}
+.enter-context>h1{
+  font-size: 10vw;
+}
+.enter-context, .quiz-question, .results-context{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(219, 212, 211, .80);
+  padding: 3%;
+  box-shadow: 0px 0px 10px 5px #888888;
+  border-radius: 3px;
+}
+
+label{
+  font-family: 'Josefin Slab', serif;
+}
+.quiz-button{
+  font-family: 'Josefin Slab', serif; 
+  background: #D2CCA1;
+  box-shadow: 0px 0px 10px 1px #888888;
+  font-size: 1.5vw;
+}
+.answer{
+  margin-top: 2%;
+  background: #D2CCA1;
+  color: #387780;
+  font-size: 2vw;
+}
+
+.enter-button{
+  margin-top: 20%;
+  font-size: 2vw;
+  background: #D2CCA1;
+  box-shadow: 0px 0px 10px 1px #888888;
+  border-radius: 3px;
+}
+.result-button-div{
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3%;
+}
+.options, input{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.p-title{
+  text-align: center;
+  border: solid;
+  margin: auto 10%;
+}
+.results-cards{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+.results-card{
+  border: solid;
+  display: flex;
+  flex-direction: column;
+}
+.results-effects{
+  display: grid;
+  grid-template-areas: 
+  "pos  neg  med";
+}
+.results-postive{
+  grid-area: pos;
+  margin: 2%;
+}
+.results-item{
+  display: flex;
+  flex-direction: row;
+}
+.results-negative{
+  grid-area: neg;
+  margin: 2%;
+}
+.results-medical{
+  grid-area: med;
+}
+
+

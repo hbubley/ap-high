@@ -1,0 +1,24 @@
+import React, { useState, useEffect } from "react";
+import "./styles.css";
+
+export default function () {
+  const [image, setImage] = useState('');
+
+  useEffect(() => {
+    const makeApiCall = async () => {
+        const url = `https://strainapi.evanbusse.com/akuuKLy/strains/search/all`
+        const res = await fetch(url)
+        const json = await res.json()
+        console.log('fetched park info:', json)
+        json.filter(item => {
+          console.log()
+        })
+    }
+    makeApiCall()
+}, [])
+  return (
+    <div className="App">
+      <h1>Random GIF Generator!</h1>
+    </div>
+  );
+}
