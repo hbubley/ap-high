@@ -87,20 +87,21 @@ label{
   margin: auto 10%;
 }
 .results-cards{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-
-}
-.results-card{
   border: solid;
   display: flex;
   flex-direction: column;
+  background:  rgba(156, 153, 140, .6);
+  padding: 2%;
+}
+.results-card>h2{
+  color: #E83151;
 }
 .results-effects{
   display: grid;
   grid-template-areas: 
   "pos  neg  med";
+  color:#477780;
+  grid-gap: 1%;
 }
 .results-postive{
   grid-area: pos;
