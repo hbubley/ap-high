@@ -1,5 +1,4 @@
-import React, { useEffect, useState} from "react";
-import Carousel from "react-bootstrap/Carousel";
+import React, {useState} from "react";
 
 export default function A(props) {
   const [step, setStep] = useState(0)
