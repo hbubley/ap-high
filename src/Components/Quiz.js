@@ -9,8 +9,9 @@ export default function Quiz() {
   let result;
 
   const handleChange = e => {
-    let userInput = e.target.value;
+    let userInput = e.target.value
     setInput(userInput);
+
   };
   const handleSubmit = () => {
     setAnswerArray([...answerArray, input]);
@@ -45,10 +46,11 @@ export default function Quiz() {
       >
         <input
           value={index + 1}
-          key={index}    
+          key={step}    
           type="radio"
-          name={bigFiveQuestions.questions[step]}
+          name={input}
           onChange={handleChange}
+          disabled= {step <= 9 ? false : true}
         />
         <span className="answer-text">{answerOption}</span>
       </label>
@@ -59,6 +61,26 @@ export default function Quiz() {
   const decrement = () => setStep(step - 1);
   let percent = (step / 9) * 100;
 
+const handleButtons = () => {if(step <= 9){
+    return(<button
+      className="quiz-button"
+      disabled = {input ? false : true}
+      onClick={handleSubmit}
+    >
+      NEXT
+    </button>)
+  }
+  else if(step === 10 ) {
+    return(  <Link to={`/quiz/${result}`}>
+    <button
+      className="quiz-button"
+      onClick={handleSubmit}
+    >
+      Take a Hit!
+    </button>
+  </Link>)
+  }}
+
   return (
     <section className="quiz">
       <div className="quiz-question">
@@ -68,22 +90,23 @@ export default function Quiz() {
         </h1>
         <div className="options">{answers}</div>
         <div className="result-button-div">
-          <button
+          {handleButtons()}
+          {/* <button
             className="quiz-button"
             onClick={handleSubmit}
             disabled={input && step <= 9 ? false : true}
           >
             NEXT
-          </button>
-          <Link to={`/quiz/${result}`}>
+          </button> */}
+          {/* <Link to={`/quiz/${result}`}>
             <button
               className="quiz-button"
               onClick={handleSubmit}
               disabled={step === 10 ? false : true}
-            >
-              Take a Hit!
-            </button>
-          </Link>
+            > */}
+              {/* Take a Hit!
+            </button> */}
+          {/* </Link> */}
         </div>
       </div>
     </section>
