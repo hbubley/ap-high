@@ -1,68 +1,143 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Overview
+![Image description](https://media.tenor.com/images/afdd108e2e6b46fd825a66e1b92dc87e/tenor.gif)
 
-## Available Scripts
+## Project Links
 
-In the project directory, you can run:
+- [github repo link](https://github.com/hbubley/react_app_project_2)
+- [add your deployment link]()
 
-### `npm start`
+## Project Description
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I will be building a health survey application involving a question display and response collection UI.  Responses would need to update application state to in order to support results pages.
+I will most likely be using some form of storage, either local or to another API. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Brainstorm:
+-RESEARCH BEFORE ARCHITECTURE:
 
-### `npm test`
+- [Local storage with useEffect hoook](https://www.udemy.com/course/modern-react-bootcamp/learn/lecture/14384908#overview)
+- useReduce
+- Could I have the original json saved as a state and alter it to save the user's answer by adding an answer value?
+- step function to take questions forward and back
+- state conatiaining all the questions, state containing answers and questions, state handling step forward and back.
+- pull from json and then api
+- button that only appears after state containing questionss and answers is equal in length to the state/list containing all the questions. 
+- post answers back to api after each submit to render results page
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Steps
 
-### `npm run build`
+##### comp1 (PARENT)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ROUTE
+- take data from api/json and map over it to get individual questions
+- in object, have key that says hasAnswered = false, switches to true when user answers. (possibly a state?)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+##### comp1a (CHILD OF COMP 1)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- map over individual questions in order to get all possible answers to appear as radio buttons
+- toggle hasAnswered state when user clicks an input
+- when the key hasAnswered = true, show 'next' button
 
-### `npm run eject`
+##### comp1b (CHILD OF COMP 1)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- update state pushing quesiton id, question answer, and index into an array handled by state. Use local storage?
+- give state ability to work next, previous, and submit buttons
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### comp2
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- ROUTE
+- takes user to updated results page
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+#### STATES
 
-## Learn More
+##### [userAnswer, setUserAnswer] = useState[{question}:{answer}]
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### [step, setStep] = useState[{index}]
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### [hasAnswered, setHasAnswered] = [false]
 
-### Code Splitting
+``` HTML
+- if hasAnswered === [true]{
+    push index to step state
+}
+- if step.length === userAnswer.length{
+    enable next button
+}
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+- const increment = () => setStep(push(index));
 
-### Analyzing the Bundle Size
+- <button onClick={increment} disabled={(step.length === userAnswer.length && hasAnswered===true) ? false : true}>
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+- when user answers a question, store question answer key to user answer. When hasAnswered === true, (toggle hook) user has the ability to go to the next question. 
+- useEffect for local storage will update whenever userAnswer has changed. 
 
-### Making a Progressive Web App
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+## API
+http://strains.evanbusse.com/
 
-### Advanced Configuration
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+```
+{data: { 
+{
+    "Afpak": {
+        "id": 1,
+        "race": "hybrid",
+        "flavors": [
+            "Earthy",
+            "Chemical",
+            "Pine"
+        ],
+        "effects": {
+            "positive": [
+                "Relaxed",
+                "Hungry",
+                "Happy",
+                "Sleepy"
+            ],
+            "negative": [
+                "Dizzy"
+            ],
+            "medical": [
+                "Depression",
+                "Insomnia",
+                "Pain",
+                "Stress",
+                "Lack of Appetite"
+            ]
+        }
+    },
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+}}
+```
 
-### `npm run build` fails to minify
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Wireframes
+
+Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
+
+- [add link to your wireframes]()
+
+- [add link to your react architecture]()
+
+## Architecture
+
+- [Link to my react architecture](https://files.slack.com/files-pri/T0351JZQ0-F01129GNVUL/img_0107.jpg)
+
+
+### MVP/PostMVP - 5min
+
+#### MVP
+- Find and use external api
+- Render data on page
+- Allow user to interact with the page
+- Form that updates an array of data using state, pushing user input into array
+- Work with API to print necessary information
+- limit results on page
+
+#### PostMVP 
+
+- Add CSS Effects to make Monkey look smokey
+- Disable input options on last question
+- Get radio button to clear after each answer input
+
