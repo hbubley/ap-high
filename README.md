@@ -111,15 +111,6 @@ http://strains.evanbusse.com/
 }}
 ```
 
-
-## Wireframes
-
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
-
-- [add link to your wireframes]()
-
-- [add link to your react architecture]()
-
 ## Architecture
 
 - [Link to my react architecture](https://files.slack.com/files-pri/T0351JZQ0-F01129GNVUL/img_0107.jpg)
