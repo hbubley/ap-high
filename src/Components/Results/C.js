@@ -6,8 +6,8 @@ export default function C(props) {
   const decrement = () => setStep(step - 1);
   let title = "Conscientiousness"
   if (props.json) {
-    const strains = [props.json["Green Crack"], props.json["East Coast Sour Diesel"], props.json["Jack Herrer"], props.json["Gelato"] ]
-    const strainNames = ["Green Crack", "East Coast Sour Diesel", "Jack Herrer", "Gelato"]
+    const strains = [props.json["Green Crack"], props.json["East Coast Sour Diesel"], props.json["Jack Herer"], props.json["Gelato"] ]
+    const strainNames = ["Green Crack", "East Coast Sour Diesel", "Jack Herer", "Gelato"]
     const positiveEffects = strains[step].effects.positive.map(
       (item, index) => {
         return (

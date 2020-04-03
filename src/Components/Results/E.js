@@ -9,7 +9,7 @@ export default function E(props) {
     console.log("fetched", props.json.Afpak);
     console.log("fetched", props.json.Afpak.effects.positive);
     const strains = [props.json["Jack Herer"], props.json["East Coast Sour Diesel"], props.json["White Widow"], props.json["Bruce Banner"], props.json["Super Silver Haze"]]
-    const strainNames = ["Jack Herrera", "East Coast Sour Diesel", "White Widow", "Bruce Banner", "Super Silver Haze"]
+    const strainNames = ["Jack Herer", "East Coast Sour Diesel", "White Widow", "Bruce Banner", "Super Silver Haze"]
     const positiveEffects = strains[step].effects.positive.map(
       (item, index) => {
         return (
