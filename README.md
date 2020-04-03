@@ -3,8 +3,8 @@
 
 ## Project Links
 
-- [github repo link](https://github.com/hbubley/react_app_project_2)
-- [add your deployment link]()
+- [github repo link](https://github.com/hbubley/ap-high)
+- [Deployment link](https://ap-high.netlify.com/)
 
 ## Project Description
 
