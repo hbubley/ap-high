@@ -6,10 +6,8 @@ export default function C(props) {
   const decrement = () => setStep(step - 1);
   let title = "Conscientiousness"
   if (props.json) {
-    console.log("fetched", props.json.Afpak);
-    console.log("fetched", props.json.Afpak.effects.positive);
-    const strains = [props.json["Green Crack"], props.json["East Coast Sour Diesel"], props.json.Afwreck]
-    const strainNames = ["Green Crack", "East Coast Sour Diesel", ""]
+    const strains = [props.json["Green Crack"], props.json["East Coast Sour Diesel"], props.json["Jack Herrer"], props.json["Gelato"] ]
+    const strainNames = ["Green Crack", "East Coast Sour Diesel", "Jack Herrer", "Gelato"]
     const positiveEffects = strains[step].effects.positive.map(
       (item, index) => {
         return (

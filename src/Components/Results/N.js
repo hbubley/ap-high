@@ -6,10 +6,8 @@ export default function N(props) {
     const decrement = () => setStep(step - 1);
     let title = "Neuroticism"
     if (props.json) {
-      console.log("fetched", props.json.Afpak);
-      console.log("fetched", props.json.Afpak.effects.positive);
-      const strains = [props.json["Durban Poison"], props.json["Green Crack"], props.json["Ghost Train Haze"]]
-      const strainNames = ["Durban Poison", "Green Crack", "Ghost Train Haze"]
+      const strains = [props.json["Durban Poison"], props.json["Green Crack"], props.json["Ghost Train Haze"], props.json["OG Kush"]]
+      const strainNames = ["Durban Poison", "Green Crack", "Ghost Train Haze", "OG Kush"]
       const positiveEffects = strains[step].effects.positive.map(
         (item, index) => {
           return (
